@@ -91,6 +91,33 @@ padding:20px;
 </nav>
 
 <section>
+<div class="card">
+
+<h2>Trò chơi trắc nghiệm: Tình hữu nghị Việt – Lào</h2>
+
+<p>1. Quốc hoa của Lào là gì?</p>
+<input type="radio" name="q1" value="0"> Hoa sen<br>
+<input type="radio" name="q1" value="1"> Hoa Chăm Pa<br>
+<input type="radio" name="q1" value="0"> Hoa mai<br>
+
+<p>2. Việt Nam và Lào có mối quan hệ gì?</p>
+<input type="radio" name="q2" value="1"> Hữu nghị đặc biệt<br>
+<input type="radio" name="q2" value="0"> Đối thủ<br>
+<input type="radio" name="q2" value="0"> Không liên quan<br>
+
+<p>3. Thủ đô của Lào là gì?</p>
+<input type="radio" name="q3" value="1"> Viêng Chăn<br>
+<input type="radio" name="q3" value="0"> Luang Prabang<br>
+<input type="radio" name="q3" value="0"> Pakse<br>
+
+<br>
+
+<button onclick="checkQuiz()">Nộp bài</button>
+
+<h3 id="result"></h3>
+
+</div>
+
 
 <div class="card">
 
@@ -141,5 +168,27 @@ allowfullscreen>
 
 </footer>
 
+<script>
+
+function checkQuiz(){
+
+let score = 0;
+
+let q1 = document.querySelector('input[name="q1"]:checked');
+let q2 = document.querySelector('input[name="q2"]:checked');
+let q3 = document.querySelector('input[name="q3"]:checked');
+
+if(q1) score += parseInt(q1.value);
+if(q2) score += parseInt(q2.value);
+if(q3) score += parseInt(q3.value);
+
+document.getElementById("result").innerHTML =
+"Bạn được " + score + "/3 điểm 🎉";
+
+}
+
+</script>
+  
 </body>
 </html>
+
